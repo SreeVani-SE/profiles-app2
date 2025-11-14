@@ -19,15 +19,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
+          # point cache at the lock file inside profiles-app
+          cache-dependency-path: profiles-app/package-lock.json
+
+      # install deps in profiles-app/
       - run: npm ci
+        working-directory: profiles-app
+
+      # build from profiles-app/
       - run: npm run build
+        working-directory: profiles-app
+
+      # upload the built dist folder
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: profiles-app/dist
 
   deploy:
     needs: build
