@@ -29,6 +29,14 @@ npm run build
 
 **Live URL:** https://sreevani-se.github.io/profiles-app2/
 
+**Screenshot of rendered cards:** Profile.png
+
+**Link to commit diff that introduced components and .map():** https://github.com/SreeVani-SE/profiles-app2/commit/98cf22b220ec2a719c38af3ac329c9209e98fa80
+
+**Stateful UI & Like Button:** StatefulUI&LikeButton.png
+
+**GIF (or multiple screenshots) adding a new profile and error case**: Form.png
+
 ## Notes
 - Uses React + React-Bootstrap.
 - We use components, props, and `.map()`.
